@@ -1,9 +1,10 @@
+/** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
 export const Header = ({ pageTitle }) => {
   return (
     <>
-      <title>"Burn G" | {pageTitle}</title>
+      <title>{pageTitle} | "Burn G"</title>
       <header
         css={css`
           width: 100%;
