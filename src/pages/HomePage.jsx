@@ -2,11 +2,13 @@
 import { css } from "@emotion/react";
 import { Header } from "../components/Header";
 import { VideoListCard } from "../components/VideoListCard";
+import { dummyMusic } from "../data/dummyMusic";
 
 export const HomePage = (props) => {
+  const videoUrls = dummyMusic(); //to replace with an api call
   return (
     <>
-      <Header pageTitle={"Home Page"} />
+      <Header pageTitle={"Home Page"} videoUrls={videoUrls} />
       <main>
         <div
           css={css`
@@ -16,7 +18,7 @@ export const HomePage = (props) => {
             padding-bottom: 4rem;
           `}
         >
-          <VideoListCard />
+          <VideoListCard videoUrls={videoUrls}/>
         </div>
       </main>
     </>

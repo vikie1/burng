@@ -2,7 +2,7 @@
 import { css } from "@emotion/react";
 import searchIcon from "./../resources/image/24px.svg";
 
-export const Header = ({ pageTitle }) => {
+export const Header = ({ pageTitle, videoUrls }) => {
   return (
     <>
       <title>{pageTitle} | "Burn G"</title>
@@ -34,7 +34,7 @@ export const Header = ({ pageTitle }) => {
             display: flex;
             align-items: center;
             border: 1px solid lightgrey;
-            margin-right: 5px;
+            margin: auto 5px;
             border-radius: 5px;
           `}
         >
@@ -46,14 +46,22 @@ export const Header = ({ pageTitle }) => {
               outline: none;
               flex: 1 1 auto;
             `}
+            id="musicSearchItems"
+            list="musicSearch"
           />
           <img
             src={searchIcon}
             css={css`
               padding: 5px;
+              cursor: pointer;
             `}
             alt="A searchIcon"
           />
+          <datalist id="musicSearch">
+          {videoUrls.map((video, index) => (
+            <option value={video.name} key={index}></option>
+          ))}
+          </datalist>
         </div>
       </header>
     </>
