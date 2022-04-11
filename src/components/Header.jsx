@@ -3,6 +3,11 @@ import { css } from "@emotion/react";
 import searchIcon from "./../resources/image/24px.svg";
 
 export const Header = ({ pageTitle, videoUrls }) => {
+
+  // Run this method when a search bar option is clicked
+  const handleOptionClick = (video) => {
+      console.log(video)
+  }
   return (
     <>
       <title>{pageTitle} | "Burn G"</title>
@@ -59,7 +64,7 @@ export const Header = ({ pageTitle, videoUrls }) => {
           />
           <datalist id="musicSearch">
           {videoUrls.map((video, index) => (
-            <option value={video.name} key={index}></option>
+            <option value={video.name} key={index} onClick={e => handleOptionClick(video)}></option>
           ))}
           </datalist>
         </div>
