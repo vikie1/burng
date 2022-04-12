@@ -3,9 +3,12 @@ import { css } from "@emotion/react";
 import { Header } from "../components/Header";
 import { VideoListCard } from "../components/VideoListCard";
 import { dummyMusic } from "../data/dummyMusic";
+import { useUrl } from "../data/urls";
+import { useFetch } from "../hooks/useFetch";
 
 export const HomePage = (props) => {
   const videoUrls = dummyMusic(); //to replace with an api call
+  const { data } = useFetch(useUrl('music'));
   return (
     <>
       <Header pageTitle={"Home Page"} videoUrls={videoUrls} />
@@ -18,7 +21,7 @@ export const HomePage = (props) => {
             padding-bottom: 4rem;
           `}
         >
-          <VideoListCard videoUrls={videoUrls}/>
+          <VideoListCard videoUrls={data ? data : videoUrls}/>
         </div>
       </main>
     </>

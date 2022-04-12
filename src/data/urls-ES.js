@@ -4,7 +4,8 @@ const getUrl = (name) => {
       contact: pbVictor + "/contact",
       blogAPI: pbVictor + "/lfv/blogs",
       courseAPI: pbVictor + "/lfv/courses",
-      roadMapsAPI: pbVictor + "/lfv/roadmaps"
+      roadMapsAPI: pbVictor + "/lfv/roadmaps",
+      music: pbVictor + "/music/"
     };
     return pbVictorSubUrls[name];
 };

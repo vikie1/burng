@@ -30,7 +30,7 @@ export const VideoListCard = ({videoUrls}) => {
                 }
               }
             `}
-            src={video.url + "?modestbranding=1&&rel=0"}
+            src={video.musicUrl + "?modestbranding=1&&rel=0"}
             frameborder="0"
             width={350}
             height={200}
