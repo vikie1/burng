@@ -21,7 +21,7 @@ export const HomePage = (props) => {
             padding-bottom: 4rem;
           `}
         >
-          <VideoListCard videoUrls={data ? data : videoUrls}/>
+          <VideoListCard videoUrls={(data && data.length > 0) ? data : videoUrls}/>
         </div>
       </main>
     </>
